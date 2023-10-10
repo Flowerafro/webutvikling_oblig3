@@ -1,1 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
+body {
+    background-color: rgb(222, 199, 199);
+}
+
+header {
+    border: blue 2px solid;
+}
+
+main {
+    border: red 2px solid;
+}
+
+article {
+    border: pink 2px solid;
+}
+
+section {
+    border: purple 2px solid;
+}
+
+
+
+footer {
+    border: green 2px solid;
+}
