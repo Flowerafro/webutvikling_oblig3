@@ -1,31 +1,172 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&display=swap');
+
+:root {
+ --background1: #d7d3d3;
+ --background2: rgb(39, 37, 37, .97); 
+ --colorfont1: rgb(216, 122, 46);
+ --colorfont2: #fff;
+ --fontsizeH1: 1.5rem;
+ --fontsizeh2: 1.3rem;
+ --fontsizeh3: 1.1rem;
+ --fontsizeh4: 1rem;
+ --fontsizeh5: 0.8rem;
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
 
 body {
-    background-color: rgb(222, 199, 199);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--background1);
 }
 
+/* ---------------- H E A D E R / NAV-BAR ---------------------- */
+/* ---------------- M E N Y / DROP DOWN ---------------------- */
 header {
-    border: blue 2px solid;
+    background: var(--background2);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
 }
 
-main {
-    border: red 2px solid;
+.logo-design {
+    color: var(--colorfont1);
+    font-size: var(--fontsizeH1);
+}
+/*---- fjerner checkboxen--*/ 
+.nav-dropdown {
+    display: none;
+}
+/*---- posisjonerer <span> mao det området man kan checke som ikke er checkbox. Vil ha meny dropdown i venstre øvre hjørne så da må top og left være 0. margin left er samme som margin left i nav li--*/ 
+.nav-dropdown-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-article {
-    border: pink 2px solid;
+.nav-dropdown-label span, 
+.nav-dropdown-label span::before, 
+.nav-dropdown-label span::after {
+    display: block;
+    background: #fff;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
 }
 
-section {
-    border: purple 2px solid;
+/* --- for at pseudo elementer skal synes -- */
+.nav-dropdown-label span::before, 
+.nav-dropdown-label span::after {
+    content: '';
+    position: absolute;
+}
+
+/* --- flytter den øverste og nederste streken til riktig posisjon --*/ 
+.nav-dropdown-label span::before {
+    bottom: 7px;
+}
+
+.nav-dropdown-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background2);
+    width: 100%;
+    /*display: none;*/ /*--display none fordi jeg legger inn pseudoklasse :checked som leter etter checkboxer. Den skal fjernes senere.--*/
+    transform: scale(1, 0); /*første tallet beholder bredden 100% men fjerner all høyde, viser 0 høyde%*/
+    transform-origin: top; /*definerer hvor transform skal begynne*/
+    transition: transform 400ms ease-in-out; /* definerer overgangen fra transform i nav til transform i .nav-dropdown:checked ~ nav */
+}
+
+nav ul { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--colorfont2);
+    text-decoration: none;
+    opacity: 0; /*gjør linker usynlige men de er der. de blir synlige i .nav-dropdown:checked ~nav a*/
+    font-size: var(--fontsizeh2);
+    transition: 0s color;
+}
+
+nav a:hover {
+    color: var(--colorfont1);
+    text-transform: uppercase;
+}
+
+.nav-dropdown:checked ~ nav { /*--tilde ~ leter etter en nav som er "søsken" til nav-dropdown. Så når nav blir "checked" så vil nav-dropdown displayes som block. Men checkboxen skal fjernes --*/
+    /*display:block;*/
+    transform: scale(1,1); /*når den checkes vil den skalere fra (1,0) til (1,1) */
+}
+
+.nav-dropdown:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms; /* forsinkelse på åpning av meny*/
 }
 
 
+/* ---------------- M A I N / HOVEDINNHOLD ---------------------- */
 
-footer {
-    border: green 2px solid;
+
+
+/* ---------------- F O O T E R/ BUNN ---------------------- */
+
+
+/* ---------------  M E D I A  Q U E R Y ----------*/
+
+@media screen and (min-width: 800px) {
+    .nav-dropdown-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo-design {
+        grid-column: 1 / 2;
+    }
+
+    nav {
+        all: unset; /*tar av alt vi har gjort tidligere fra nav*/
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+    }
 }
