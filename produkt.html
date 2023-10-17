@@ -3,89 +3,105 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Produktside</title>
 </head>
+
 <body>
     <header>
+        <input type="checkbox" id="nav-dropdown" class="nav-dropdown">
         <nav>
-            <!--Header venstre: meny skal bli dropdown-->
+            <h1 class="logo-design">1347</h1>
             <ul>
-                <li><a href="index.html"></a>Forside</li>
-                <li><a href="produkt.html"></a>Produkter</li>
-                <li><a href="#"></a>Brukerkonto</li>
-                <li><a href="#"></a>Favoritter</li>
-                <li><a href="#"></a>Levering og retur</li>
-                <li><a href="#"></a>Kontakt oss</li>
-                <li><a href="om-oss.html"></a>Om oss</li>
-            </ul>
-        
-        <!--Header midten: søkefelt-->
-            <form action="">
-                <input type="search" class="search-shoes" placeholder="Søk.." required>
-                <button type="submit" class="search-shoes-btn">Søk</button>
-            </form>
-
-            <!--Header høyre: handlekurv-->
-            <ul>
-                <li>
-                    <a href="#" class="shopping-cart">Handlekurv</a>  
-                </li>
-            </ul>
+            <li><a href="#">Produkter</a></li>
+            <li><a href="#">Brukerkonto</a></li>
+            <li><a href="#">Favoritter</a></li>
+            <li><a href="#">Levering og retur</a></li>
+            <li><a href="#">Kontakt oss</a></li>
+            <li><a href="#">Om oss</a></li>
+        </ul>
         </nav>
+        <label for="nav-dropdown" class="nav-dropdown-label">
+            <span></span> <!--X kan også nå klikkes på for å åpne dropdown meny-->
+        </label>
     </header>
 
-    <main> <!--Produkt kategorier-->
-        <section>
-            <article>
-                <h2>Nyheter</h2>
-                <div class="content-news">
-                    <p>navn på nyhet</p>
-                    <a href="#">link til nyhet</a>
-                </div>
-                <div class="content-news">
-                    <p>navn på nyhet</p>
-                    <a href="#">link til nyhet</a>
-                </div>
+    <main class="main-content"> 
+        <!--Produkt kategorier-->
+        <section class="section-container-1">
+            <article class="news-container">
+                <!--<h2 class="new-header">Sjekk ut nyheter</h2>-->
+                <a href="#" class="news-button">NYHETER</a> 
+            </article>
+                              
+        </section>
+
+        <section class="category-container">
+            <h2 class="category-header">Casuals</h2>
+            <article class="category">
+                <a href="#" class="category-items" id="casual-1">Casual</a> 
+                <a href="#" class="category-items" id="casual-2">Casual</a> 
+                <a href="#" class="category-items" id="casual-3">Casual</a> 
+            </article>
+            <h2 class="category-header">Fest</h2>
+            <article class="category">
+                <a href="#" class="category-items" id="fest-1">Festlige sko</a> 
+                <a href="#" class="category-items" id="fest-2">Festlige sko</a> 
+                <a href="#" class="category-items" id="fest-3">Festlige sko</a>
             </article>
         </section>
-        <section>
-            <h2>Hverdagslige sko</h2>
-            <article></article>
-            <h2>Festlige sko</h2>
-            <article></article>
+
+        <section class="section-container-2">
+            <article class="popular-container">
+                <!--<h2>Populære Produkter</h2>-->
+                <a href="#" class="popular-button"> TRENDING</a></article>
         </section>
-        <section>
-            <h2>Populære Produkter</h2>
-            <article></article>
-            <article></article>
+
+        <section class="category-container">
+            <h2 class="category-header">Atlestiske sko</h2>
+            <article class="category">
+                <a href="#" class="category-items">Atlestiske sko</a> 
+                <a href="#" class="category-items">Atlestiske sko</a> 
+                <a href="#" class="category-items">Atlestiske sko</a>
+                
+            </article>
+            <h2 class="category-header">Praktiske sko</h2>
+            <article class="category">
+                <a href="#" class="category-items">Praktiske sko</a> 
+                <a href="#" class="category-items">Praktiske sko</a> 
+                <a href="#" class="category-items">Praktiske sko</a>
+            </article>
         </section>
-        <section>
-            <h2>Atlestiske sko</h2>
-            <article></article>
-            <article></article>
-            <h2>Praktiske sko</h2>
-            <article></article>
-            <article></article>
-        </section>
+
     </main>
 
     <footer> 
-        <section class="footer">
-          <h3>Footer seksjon</h3>
-          <ul class="footer-social-media">
-              <li><a href="#" class="fa-facebook"></a></li>
-              <li><a href="#" class="fa-instagram"></a></li>
-              <li><a href="#" class="fa-twitter"></a></li>
-              <li><a href="#" class="fa-youtube"></a></li>
-          </ul>
-        </section>
-  
-        <section>
-          <h3 class="footer-copyright">
-              <p>Copyright &copy;2023</p>
-          </h3>
-        </section>
+       <!-- <section class="footer-section">
+            <article class="footer-contact">
+                <ul class="contact">
+                    <li><a href="#">Kontakt oss</a></li>
+                    <li><a href="#">epost</a></li>
+                    <li><a href="#">Ofte spurte spørsmål</a></li>
+                    <li><a href="#">Våre tjenester</a></li>
+                    <li><a href="#">Bestilling</a></li>
+                    <li><a href="#">Leveranse og retur</a></li>
+                    <li><a href="#">Copyright &copy;2023</a></li>
+                </ul>
+            </article>
+            
+            <article class="footer-social"> <h3>Følg oss</h3>
+                <ul class="social-media">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-youtube"></i></a></li>
+                </ul>
+                <p id="footer-copyrights">Copyright 2020. All Rights Reserved</p>
+            </article>
+           
+        </section>-->
       </footer>
 </body>
+
+
 </html>

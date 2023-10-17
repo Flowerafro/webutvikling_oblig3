@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&display=swap');
+
+:root {
+ --color-grayscale-1: #fff;
+ --color-grayscale-2: #dedede;
+ --color-grayscale-3: #ccc;
+ --color-grayscale-4: #666;
+ --color-grayscale-5: #4d4d4d;
+ --color-grayscale-6: #262626;
+ --color-grayscale-7: #000;
+ --color-warm-1: #ffb199;
+ --color-warm-2: #ff8a66;
+ --color-warm-3: #ff6333;
+ --color-warm-4: #db2c00;
+ --color-warm-5: #661800;
+ --color-cool-1: #9fbef9;
+ --color-cool-2: #6e9ef7;
+ --color-cool-3: #3e7ef4;
+ --color-cool-4: #255b98;
+ --color-cool-5: #062560;
+ --color-pink-1: #f99fb6;
+ --color-pink-2: #f66f91;
+ --color-pink-3: #f33f6c;
+ --color-pink-4: #dd0e42;
+ --color-pink-5: #60061d;
+ --color-green-1: #80e5de;
+ --color-green-2: #56dcd3;
+ --color-green-3: #23a9a0;
+ --color-green-4: #1a7f78;
+ --color-green-5: #115550;
+ --color-purple-1: #e3b5db;
+ --color-purple-2: #d68fc9;
+ --color-purple-3: #ba45a5;
+ --color-purple-4: #7b2d6d;
+ --color-purple-5: #381531;
+ --fontsizeH1: 1.5rem;
+ --fontsizeh2: 1.3rem;
+ --fontsizeh3: 1.1rem;
+ --fontsizeh4: 1rem;
+ --fontsizeh5: 0.8rem;
+ --section-space: 3.5rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: var(--color-grayscale-1);
+    display: flex;
+    flex-direction: column;
+}
+/* -------------------------------------------------------------- */
+/* ---------------- H E A D E R / NAV-BAR  ---------------------- */
+/* -------------------------------------------------------------- */
+header {
+    background: var(--color-grayscale-5);
+    text-align: center;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    padding: 45px;
+}
+
+.logo-design {
+    color: var(--color-warm-2);
+    font-size: var(--fontsizeH1);
+    padding: 20px;
+}
+/*---- fjerner checkboxen--*/ 
+.nav-dropdown {
+    display: none;
+}
+/*---- posisjonerer <span> mao det området man kan checke som ikke er checkbox. Vil ha meny dropdown i venstre øvre hjørne så da må top og left være 0. margin left er samme som margin left i nav li--*/ 
+.nav-dropdown-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-label span, 
+.nav-dropdown-label span::before, 
+.nav-dropdown-label span::after {
+    display: block;
+    background: #fff;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* --- for at pseudo elementer skal synes -- */
+.nav-dropdown-label span::before, 
+.nav-dropdown-label span::after {
+    content: '';
+    position: absolute;
+}
+
+/* --- flytter den øverste og nederste streken til riktig posisjon --*/ 
+.nav-dropdown-label span::before {
+    bottom: 7px;
+}
+
+.nav-dropdown-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--color-grayscale-5);
+    padding: 0px 0px 20px 20px;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    /*display: none;*/ /*--display none fordi jeg legger inn pseudoklasse :checked som leter etter checkboxer. Den skal fjernes senere.--*/
+    transform: scale(1, 0); /*første tallet beholder bredden 100% men fjerner all høyde, viser 0 høyde%*/
+    transform-origin: top; /*definerer hvor transform skal begynne*/
+    transition: transform 400ms ease-in-out; /* definerer overgangen fra transform i nav til transform i .nav-dropdown:checked ~ nav */
+}
+
+nav ul { 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--color-grayscale-6);
+    text-decoration: none;
+    opacity: 0; /*gjør linker usynlige men de er der. de blir synlige i .nav-dropdown:checked ~nav a*/
+    font-size: var(--fontsizeh2);
+    transition: 0s color;
+}
+
+nav a:hover {
+    color: var(--color-warm-3);
+    text-transform: uppercase;
+}
+
+.nav-dropdown:checked ~ nav { /*--tilde ~ leter etter en nav som er "søsken" til nav-dropdown. Så når nav blir "checked" så vil nav-dropdown displayes som block. Men checkboxen skal fjernes --*/
+    /*display:block;*/
+    transform: scale(1,1); /*når den checkes vil den skalere fra (1,0) til (1,1) */
+}
+
+.nav-dropdown:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms; /* forsinkelse på åpning av meny*/
+}
+
+
+
+/* -------------------------------------------------------------- */
+/* ---------------- M A I N / HOVEDINNHOLD ---------------------- */
+/* -------------------------------------------------------------- */
+
+main {
+    width: 100%;
+    position: relative;
+
+    border: red solid 2px;
+}
+
+/* ---------------- Index: søkefelt og kategoriknapper ---------------------- */
+
+.search-section {
+    padding: 10px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+.categories-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.f-btn {
+    display: inline-block;
+    padding: 1rem;
+
+    border-radius: 20px 20px 20px 0px;
+    border: none;
+}
+/* ------------------------ Produktside ------------------------ */
+
+.main-content {
+    top: 130px;
+}
+
+/* ------------------------ Nyhetsseksjon ------------------------ */
+.news-container {
+    margin: 10px;
+
+    background-image: url(/IMG/nike-5041716_1280.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    width: 95%;
+    height: 300px;
+}
+
+.news-heading {
+
+    border: red solid 1px;
+}
+
+/* ------------------------ Nyhetsseksjon ------------------------ */
+.category-container {
+    padding: 10px;
+
+    border: blue 2px solid;
+}
+
+.popular-container {
+    margin: 10px;
+
+    background-image: url(/IMG/feet-1840619_1280.jpg);
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    width: 95%;
+    height: 300px;
+}
+
+
+/* -------------------------------------------------------------- */
+/* -------------------- F O O T E R/ BUNN ----------------------- */
+/* -------------------------------------------------------------- */
+footer {
+   margin-top: auto;
+   position: relative;
+}
+
+.footer-section{ 
+    color: var(--colorfont2);
+    list-style: none;
+    text-decoration: none;
+}
+
+/* --------------- F O O T E R/ NAV ----------*/
+.footer-contact {
+    background-color: var(--color-grayscale-5);
+    text-align: center;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    list-style: none;
+}
+
+.contact {
+    text-align: center;
+    color: var(--color-grayscale-2);
+}
+
+.contact a:visited {
+    color: var(--color-cool-2);
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+/* --------------- F O O T E R/ SOCIAL ----------*/
+
+.footer-social {
+    background-color: var(--color-grayscale-6);
+    bottom: 0;
+}
+
+.footer-social h3 {
+    text-align: center;
+    color: var(--color-grayscale-2);
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-brands {
+    color: var(--color-grayscale-2);
+}
+
+#footer-copyrights {
+    text-align: center;
+    color: var(--color-grayscale-2);
+    padding: 5px;
+    font-size: 0.5rem;
+}
+
+/* ---------------  M E D I A  Q U E R Y : Mobile ----------*/
+
+  @media screen and (min-width: 600px) {
+    .nav-dropdown-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        padding: 10px;
+    }
+
+    .logo-design {
+        grid-column: 1 / 2;
+    }
+
+    nav {
+        all: unset; /*tar av alt vi har gjort tidligere fra nav*/
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+    }
+
+    .news-container .popular-container {
+        background-size: cover;
+        background-repeat: none;
+        background-position: center;
+        width: 50%;
+        height: auto;
+    }
+
+    
+}
