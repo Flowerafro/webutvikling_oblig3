@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,900&display=swap');
 
 :root {
  --color-grayscale-1: #fff;
@@ -34,6 +34,7 @@
  --color-purple-3: #ba45a5;
  --color-purple-4: #7b2d6d;
  --color-purple-5: #381531;
+ --fontHeader: 2.5rem;
  --fontsizeH1: 2rem;
  --fontsizeh2: 1.3rem;
  --fontsizeh3: 1.1rem;
@@ -42,6 +43,15 @@
  
  --section-space: 3.5rem;
 }
+
+/*
+Font families
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'Comfortaa', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+
+*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -57,7 +67,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     min-height: 100vh;
     background-color: var(--color-grayscale-1);
 }
@@ -208,18 +218,21 @@ main {
 /* ------------------------ Produktside ------------------------ */
 
 .main-content {
-    top: 130px;
+    top: 100px;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 4;
+
+    /*overflow: scroll;*/
 }
 
 /* ------------------------ Nyhetsseksjon ------------------------ */
 .section-container-1 {
     margin: 0px;
     width: 100%;
-    padding: 20px;
+    padding: 3% 0px 30px 0px;
+
     background-color: var(--color-green-5);
     background-image: linear-gradient(120deg, var(--color-green-5),var(--color-cool-4));
 
@@ -258,45 +271,102 @@ main {
 
 /* ------------------------ Kategorier ------------------------ */
 .category-container {    
-    padding: 10px;
+    padding: 0px;
+    margin: 30px;
 }
 
 .category-header {
-    font-size: var(--fontsizeh2);
-    font-weight:800;
-    letter-spacing: 0.1rem;
+    font-size: var(--fontHeader);
+    font-weight:600;
+
+    color: var(--color-cool-5);
+    letter-spacing: 0.5rem;
     text-transform: uppercase;
     text-align: center;
-    padding: 20px;
-
-    border: purple 2px solid;
-
+    padding: 10px;
 }
 
 .category {
    display: flex; 
    justify-content: space-evenly;
    text-align: center;
-
-   border: blue 2px solid;
+   flex-wrap: wrap;
 }
 
 .category-items {
-    padding: 10px;
-    border: green 2px solid;
-}
-
-#casual-1 {
-    background-image: url(/IMG/footwear-5408643_1280.jpg);
+    padding: 100px;
+    margin: 0px;
+    box-shadow: 0 .125em .5em var(--color-grayscale-6);
+    
     background-size: cover;
     background-repeat: none;
     background-position: center;
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: fit-content;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.category-button {
+    background-color: var(--color-grayscale-1);
+    color: var(--color-cool-4);
+    font-size: 0.8rem;
+    font-weight:500;
+    border: var(--color-cool-4) 1px solid;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 .125em .5em var(--color-grayscale-6); 
+}
+
+/* ------------------------ Kategori 1: bildelinker til høstmote------------------------ */
+#mote-1{
+    background-image: url(/IMG/winter-boots-3867775_1280.jpg);
+}
+#mote-2 {
+    background-image: url(/IMG/boots-1867379_1280.jpg);
+}
+#mote-3{
+    background-image: url(/IMG/shoes-4026766_1280.jpg);
+}
+/* ------------------------ Kategori 2: bildelinker til casual------------------------ */
+#casual-1 {
+    background-image: url(/IMG/footwear-5408643_1280.jpg);
+}
+
+#casual-2 {
+    background-image: url(/IMG/jordan-4657349_1280.jpg);
+}
+
+#casual-3 {
+    background-image: url(/IMG/nike-5128118_1280.jpg);
+}
+/* ------------------------ Kategori 3: bildelinker til atletisk------------------------ */
+#fri-1{
+    background-image: url(/IMG/shoe-629644_1280.jpg);
+}
+#fri-2 {
+    background-image: url(/IMG/shoe-629645_1280.jpg);
+}
+#fri-3 {
+    background-image: url(/IMG/shoes-584850_1280.jpg);
+}
+/* ------------------------ Kategori 4: bildelinker til fancy------------------------ */
+
+#fancy-1 {
+    background-image: url(/IMG/fashion-601565_1280.jpg);
+}
+#fancy-2 {
+    background-image: url(/IMG/black-shoes-2752226_1280.jpg);
+}
+#fancy-3 {
+    background-image: url(/IMG/chelsea-boot-for-men-5851885_1280.jpg);
 }
 
 /* ------------------------ Populære varer-seksjon------------------------ */
@@ -347,7 +417,7 @@ main {
 /* -------------------------------------------------------------- */
 footer {
    margin-top: auto;
-   position: relative;
+   position: absolute;
 }
 
 .footer-section{ 
@@ -456,6 +526,12 @@ li {
         height: auto;
 
     }
+
+    .category {
+        display: flex;
+        flex-wrap:wrap; 
+    }
+
 
     
 }
