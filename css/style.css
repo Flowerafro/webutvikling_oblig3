@@ -496,11 +496,7 @@ footer {
 
   @media screen and (min-width: 600px) {
         /* ------------------------ body ------------------------ */
-    body {
-        display: grid;
-        grid-template-columns: 1fr 600px 1fr;
-        grid-template-rows: 1fr 300px 1fr;
-    }
+    
         /* ------------------------ header og navbar ------------------------ */
     .nav-dropdown-label {
         display: none;
@@ -537,6 +533,10 @@ footer {
         opacity: 1;
     }
 
+    nav a:hover {
+        color: var(--color-green-4);
+    }
+
     /* ------------------------ Produktside ------------------------ */
 
     .news-container .trendy-container {
@@ -562,5 +562,6 @@ footer {
         text-transform: uppercase;
     } 
 
-    
+    /* ------------------------ footer ------------------------ */
+   
 }
