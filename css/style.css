@@ -70,6 +70,13 @@ body {
     font-family: 'Nunito Sans', sans-serif;
     min-height: 100vh;
     background-color: var(--color-grayscale-1);
+
+    display: grid;
+    grid-template-columns: 1fr;
+/*
+fra alex angående grid: 3 rows og 3 colums 1fr max-px 1fr. sidene fyller opp ledig plass og "midten" tar den plassen den trenger
+*/
+
 }
 /* -------------------------------------------------------------- */
 /* ---------------- H E A D E R / NAV-BAR  ---------------------- */
@@ -83,6 +90,8 @@ header {
     padding: 45px;
     box-shadow: 0 0 2em rgba(0,0,0,.1);
 }
+
+/*  Må lage en ny header som ikke har posisjon fixed   */
 
 .logo-design {
     color: var(--color-cool-5);
@@ -215,13 +224,6 @@ main {
     border: none;
 }
 /* ------------------------ Produktside ------------------------ */
-
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    /*overflow: scroll;*/
-}
 
 /* ------------------------ Nyhetsseksjon ------------------------ */
 .section-container-1 {
@@ -413,7 +415,6 @@ main {
 /* -------------------------------------------------------------- */
 footer {
    margin-top: auto;
-   /*position: absolute;*/
    width: 100%;
 }
 
