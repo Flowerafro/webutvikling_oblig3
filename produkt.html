@@ -3,6 +3,9 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/font/css/fontawesome.css" rel="stylesheet">
+  <link href="/css/font/css/brands.css" rel="stylesheet">
+  <link href="css/font/css/solid.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Produktside</title>
 </head>
@@ -12,7 +15,7 @@
         <input type="checkbox" id="nav-dropdown" class="nav-dropdown">
         <nav>
             <h1 class="logo-design">1347</h1>
-            <ul>
+            <ul class="nav-links">
             <li><a href="#">Produkter</a></li>
             <li><a href="#">Brukerkonto</a></li>
             <li><a href="#">Favoritter</a></li>
@@ -29,58 +32,58 @@
     <main class="main-content"> 
         <!--Produkt kategorier-->
         <section class="section-container-1">
+            <h2 class="previews-header">nyheter</h2>
             <article class="news-container">
-                <!--<h2 class="new-header">Sjekk ut nyheter</h2>-->
-                <a href="#" class="news-button">NYHETER</a> 
-            </article>
-                              
+            <a href="#" class="news-button">NYHETER</a>   
+            </article>            
         </section>
 
         <section class="category-container">
             <h2 class="category-header">Høstmote</h2>
             <article class="category">
-                <a href="#" class="category-items" id="mote-1">Mote</a> 
+                <a href="#" class="category-items" id="mote-1"></a> 
                 <a href="#" class="category-button">Velg produkt</a> 
-                <a href="#" class="category-items" id="mote-2">mote</a>
+                <a href="#" class="category-items" id="mote-2"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
-                <a href="#" class="category-items" id="mote-3">mote</a>
+                <a href="#" class="category-items" id="mote-3"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
             </article>
+
             <h2 class="category-header">Casuals</h2>
             <article class="category">
-                <a href="#" class="category-items" id="casual-1">casual</a>
+                <a href="#" class="category-items" id="casual-1"></a>
                 <a href="#" class="category-button">Velg produkt</a> 
-                <a href="#" class="category-items" id="casual-2">Casual</a> 
+                <a href="#" class="category-items" id="casual-2"></a> 
                 <a href="#" class="category-button">Velg produkt</a> 
-                <a href="#" class="category-items" id="casual-3">Casual</a> 
+                <a href="#" class="category-items" id="casual-3"></a> 
                 <a href="#" class="category-button">Velg produkt</a> 
             </article>
         </section>
 
         <section class="section-container-2">
-            <article class="popular-container">
-                <!--<h2>Populære Produkter</h2>-->
-                <a href="#" class="popular-button"> TRENDING</a></article>
+            <h2 class="previews-header">Trendy</h2>
+            <article class="trendy-container">
+                <a href="#" id="trendy-button">se mer</a></article>
         </section>
 
         <section class="category-container">
             <h2 class="category-header">Friluft</h2>
             <article class="category">
-                <a href="#" class="category-items" id="fri-1">fri</a>
+                <a href="#" class="category-items" id="fri-1"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
-                <a href="#" class="category-items" id="fri-2">fri</a>
+                <a href="#" class="category-items" id="fri-2"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
-                <a href="#" class="category-items" id="fri-3">fri</a>
+                <a href="#" class="category-items" id="fri-3"></a>
                 <a href="#" class="category-button">Velg produkt</a> 
-                
             </article>
+
             <h2 class="category-header">Fancy</h2>
             <article class="category">
-                <a href="#" class="category-items" id="fancy-1">Fancy</a>
+                <a href="#" class="category-items" id="fancy-1"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
-                <a href="#" class="category-items" id="fancy-2">Fancy</a>
+                <a href="#" class="category-items" id="fancy-2"></a>
                 <a href="#" class="category-button">Velg produkt</a>  
-                <a href="#" class="category-items" id="fancy-3">Fancy</a>
+                <a href="#" class="category-items" id="fancy-3"></a>
                 <a href="#" class="category-button">Velg produkt</a>
             </article>
         </section>
@@ -89,18 +92,25 @@
 
     <footer> 
         <section class="footer-section">
-            <article class="footer-contact">
+            <article class="footer-container" id="contact-container">
+                <h5 class="footer-header">Kontakt oss</h5>
                 <ul class="contact">
-                    <li>Kontakt oss</li>
                     <li><a href="#">epost</a></li>
                     <li><a href="#">Ofte spurte spørsmål</a></li>
-                    <li>Våre tjenester</li>
+                    <li><a href="om-oss.html">Om oss</a></li>
+                </ul>
+                <h5 class="footer-header">Våre tjenester</h5>
+                <ul class="service">
                     <li><a href="#">Bestilling</a></li>
-                    <li><a href="#">Copyright &copy;2023</a></li>
+                    <li><a href="#">Levering</a></li>
+                    <li><a href="#">Retur</a></li>
                 </ul>
             </article>
-            
-            <article class="footer-social"> <h3>Følg oss</h3>
+        </section>
+
+        <section class="footer-section">
+            <article class="footer-container" id="social-container"> 
+                <h5 class="footer-header">Følg oss</h5>
                 <ul class="social-media">
                 <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
@@ -109,8 +119,8 @@
                 </ul>
                 <p id="footer-copyrights">Copyright 2020. All Rights Reserved</p>
             </article>
-           
         </section>
+
       </footer>
 </body>
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@500&family=Montserrat:wght@100;300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,700;6..12,800;6..12,900&display=swap');
 
 :root {
  --color-grayscale-1: #fff;
@@ -23,7 +23,7 @@
  --color-pink-3: #f33f6c;
  --color-pink-4: #dd0e42;
  --color-pink-5: #60061d;
- --color-green-1: #80e5de;
+ --color-green-1: #8bf3ec;
  --color-green-2: #56dcd3;
  --color-green-3: #23a9a0;
  --color-green-4: #1a7f78;
@@ -82,7 +82,7 @@ fra alex angående grid: 3 rows og 3 colums 1fr max-px 1fr. sidene fyller opp le
 /* ---------------- H E A D E R / NAV-BAR  ---------------------- */
 /* -------------------------------------------------------------- */
 header {
-    background: var(--color-green-1);
+    background: var(--color-green-5);
     text-align: center;
     position: fixed;
     z-index: 999;
@@ -94,7 +94,8 @@ header {
 /*  Må lage en ny header som ikke har posisjon fixed   */
 
 .logo-design {
-    color: var(--color-cool-5);
+    color: var(--color-green-2);
+    letter-spacing: 0.8rem;
     font-size: var(--fontsizeH1);
     padding: 20px;
 }
@@ -118,7 +119,7 @@ header {
 .nav-dropdown-label span::before, 
 .nav-dropdown-label span::after {
     display: block;
-    background: var(--color-cool-5);
+    background: var(--color-green-4);
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -146,7 +147,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: var(--color-green-1);
+    background: var(--color-green-5);
     padding: 0px 0px 20px 20px;
     border-radius: 0px 0px 10px 10px;
     width: 100%;
@@ -167,18 +168,17 @@ nav li {
     margin-left: 1em;
 }
 
-nav a {
-    color: var(--color-grayscale-6);
-    text-decoration: none;
-    opacity: 0; /*gjør linker usynlige men de er der. de blir synlige i .nav-dropdown:checked ~nav a*/
-    font-size: var(--fontsizeh2);
-    transition: 0s color;
+.nav-links{
+    color: var(--color-grayscale-1);
 }
 
-nav a:hover {
-    color: var(--color-warm-3);
-    text-transform: uppercase;
+nav a {
+    text-decoration: none;
+    opacity: 0; /*gjør linker usynlige men de er der. de blir synlige i .nav-dropdown:checked ~nav a*/
+    transition: 0s color;
+    font-size: var(--fontsizeh3);
 }
+
 
 .nav-dropdown:checked ~ nav { /*--tilde ~ leter etter en nav som er "søsken" til nav-dropdown. Så når nav blir "checked" så vil nav-dropdown displayes som block. Men checkboxen skal fjernes --*/
     /*display:block;*/
@@ -227,15 +227,12 @@ main {
 
 /* ------------------------ Nyhetsseksjon ------------------------ */
 .section-container-1 {
-    margin: 100px 0px 0px 0px;
+    margin: 95px 0px 0px 0px;
     width: 100%;
-    padding: 3% 0px 30px 0px;
+    padding: 30px 0px 30px 0px;
 
     background-color: var(--color-green-5);
     background-image: linear-gradient(120deg, var(--color-green-5),var(--color-cool-4));
-
-    display: flex;
-    justify-content: center;
 }
 
 .news-container {
@@ -243,24 +240,24 @@ main {
     background-size: cover;
     background-repeat: none;
     background-position: center;
-    width: 95%;
+    width: 100%;
     height: 300px;
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-    color: var(--color-grayscale-1);
+    align-items: flex-end;
 }
 
 .news-button {
     background-color: var(--color-grayscale-1);
+    width: 10rem;
+    height: 2.5rem;
+    padding: 0.8rem;
+    border-radius: 15px;
+
     color: var(--color-cool-5);
     font-size: 0.8rem;
-    font-weight:500;
-    width: 100px;
-    padding: 10px;
-    border-radius: 15px;
+    font-weight:400;
     text-decoration: none;
     text-align: center;
     box-shadow: 0 .125em .5em var(--color-grayscale-6);
@@ -276,9 +273,9 @@ main {
 .category-header {
     font-size: var(--fontHeader);
     font-weight:600;
-
     color: var(--color-cool-5);
-    letter-spacing: 0.5rem;
+
+    letter-spacing: 0.6rem;
     text-transform: uppercase;
     text-align: center;
     padding: 10px;
@@ -287,8 +284,10 @@ main {
 .category {
    display: flex; 
    justify-content: space-evenly;
-   text-align: center;
    flex-wrap: wrap;
+
+   text-align: center;
+   color: var(--color-cool-4);
 }
 
 .category-items {
@@ -308,18 +307,20 @@ main {
 }
 
 .category-button {
-    background-color: var(--color-grayscale-1);
-    color: var(--color-cool-4);
     font-size: 0.8rem;
-    font-weight:500;
-    border: var(--color-cool-4) 1px solid;
-    width: 300px;
-    padding: 10px;
-    margin: 10px;
+    font-weight: 400;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.3rem;
+
+    background-color: var(--color-grayscale-1);
+
+    width: 300px;
+    padding: 1rem;
+    margin: 0.5rem 0rem 2rem 0rem;
+    border: var(--color-cool-4) solid 1px;
+    border-radius: 0.1rem;
     box-shadow: 0 .125em .5em var(--color-grayscale-6); 
 }
 
@@ -371,15 +372,23 @@ main {
 .section-container-2 {
     margin: 0px;
     width: 100%;
-    padding: 20px;
-    background-color: var(--color-warm-1);
-    background-image: linear-gradient(120deg, var(--color-warm-4),var(--color-warm-1));
-
-    display: flex;
-    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    background-color: var(--color-cool-5);
+    background-image: linear-gradient(120deg, var(--color-cool-4), var(--color-green-5));
 }
 
-.popular-container {
+.previews-header {
+    font-size: var(--fontHeader);
+    font-weight:600;
+
+    color: var(--color-grayscale-1);
+    letter-spacing: 0.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+
+.trendy-container {
     margin: 10px;
 
     background-image: url(/IMG/feet-1840619_1280.jpg);
@@ -391,18 +400,17 @@ main {
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-    color: var(--color-grayscale-1);
+    align-items: flex-end;
 }
 
-.popular-button {
+#trendy-button {
     background-color: var(--color-grayscale-1);
-    color: var(--color-warm-5);
+    color: var(--color-cool-5);
     font-size: 0.8rem;
-    font-weight:500;
-    width: 100px;
-    padding: 10px;
+    font-weight:400;
+    width: 10rem;
+    height: 2.6rem;
+    padding: 0.8rem;
     border-radius: 15px;
     text-decoration: none;
     text-align: center;
@@ -411,55 +419,60 @@ main {
 
 
 /* -------------------------------------------------------------- */
-/* -------------------- F O O T E R/ BUNN ----------------------- */
+/* ----------------------- F O O T E R --------------------------- */
 /* -------------------------------------------------------------- */
+
 footer {
-   margin-top: auto;
-   width: 100%;
+    margin-top: 10px;
+    width: 100%;
+    box-shadow: 0 .125em .5em var(--color-grayscale-6);
+}
+.footer-section {
+    display: flex;
+    flex-direction: column;
 }
 
-.footer-section{ 
-    list-style: none;
-    text-decoration: none;
+.footer-container {
+    padding: 20px;
+    text-align: center;
 }
 
-/* --------------- F O O T E R/ NAV ----------*/
-.footer-contact {
+#contact-container {
     background-color: var(--color-green-5);
-    text-align: center;
+    color: var(--color-green-2);
 }
 
-.footer-contact a {
-    text-decoration: none;
+#social-container {
+    background-color: var(--color-green-6);
+    color: var(--color-green-3);
+}
+
+.footer-header {
+    font-size: var(--fontsizeh4);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin: 0.6rem;
+}
+
+.contact, .service, .social-media {
     list-style: none;
 }
 
-.contact {
-    text-align: center;
-    color: var(--color-grayscale-2);
-}
-
-.contact a:visited {
-    color: var(--color-cool-2);
-}
-
-li {
-    text-decoration: none;
-    list-style-type: none;
-    font-size: var(--fontsizeh5);
+.contact, a {
     color: var(--color-grayscale-1);
+    font-weight: 100;
+    font-size: var(--fontsizeh5);
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.3rem;
 }
+
+.contact, a:visited {
+    color: var(--color-);
+}
+
 /* --------------- F O O T E R/ SOCIAL ----------*/
-
-.footer-social {
-    background-color: var(--color-green-6);
-    bottom: 0;
-}
-
-.footer-social h3 {
-    text-align: center;
-    color: var(--color-grayscale-2);
-}
 
 .social-media {
     list-style: none;
@@ -469,18 +482,26 @@ li {
 
 .fa-brands {
     color: var(--color-grayscale-2);
+    padding: 20px;
 }
 
 #footer-copyrights {
     text-align: center;
     color: var(--color-grayscale-2);
     padding: 5px;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
 }
 
-/* ---------------  M E D I A  Q U E R Y : Mobile ----------*/
+/* ---------------  M E D I A  Q U E R Y : ----------*/
 
   @media screen and (min-width: 600px) {
+        /* ------------------------ body ------------------------ */
+    body {
+        display: grid;
+        grid-template-columns: 1fr 600px 1fr;
+        grid-template-rows: 1fr 300px 1fr;
+    }
+        /* ------------------------ header og navbar ------------------------ */
     .nav-dropdown-label {
         display: none;
     }
@@ -516,13 +537,14 @@ li {
         opacity: 1;
     }
 
-    .news-container .popular-container {
+    /* ------------------------ Produktside ------------------------ */
+
+    .news-container .trendy-container {
         background-size: cover;
         background-repeat: none;
         background-position: center;
         width: 50%;
         height: auto;
-
     }
 
     .category {
@@ -530,6 +552,15 @@ li {
         flex-wrap:wrap; 
     }
 
+    .category-button {
+        height: 5rem;
+        text-align: center;
+    }
+
+    .category-button:hover {
+        background-color: var(--color-green-6);
+        text-transform: uppercase;
+    } 
 
     
 }
