@@ -231,37 +231,45 @@ form {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 0.2rem;
+
+    box-shadow: 0 .125em .5em var(--color-grayscale-6);
 }
 
 .sok-btn{
     width: 3rem;
     border-radius: 0px 20px 20px 0px;
+    background-color: var(--color-green-5);
     border: none;
+    box-shadow: 0 .125em .5em var(--color-grayscale-6);
 }
 
 /* ------------ ekstra søkeknapper under ------- */
 
 .category-sok {
-   color: var(--color-green-2);
+   color: var(--color-grayscale-1);
    text-transform: uppercase;
    letter-spacing: 0.5rem;
    font-weight: 200;
 
-   padding: 1rem;
+   padding-top: 1rem;
 }
 
 .categories-btn {
     text-align: center;
-    border: green 2px solid;
 }
 
 .f-btn {
     display: inline-block;
-    padding: 0.8rem;
-    
-    border-radius: 15px;
+    padding: 0.4rem;
+    width: 5rem;
+    background-color: var(--color-green-1);
+    font-weight: 100;
 
+    margin-top: 1rem;
+    border-radius: 15px;
     border: none;
+
+    box-shadow: 0 .125em .5em var(--color-grayscale-6);
 }
 /* ---------------------------------------------------------------------------- */
 /* ------------------------ Produktside: Nyhetsseksjon ------------------------ */
@@ -303,7 +311,6 @@ form {
     text-align: center;
     box-shadow: 0 .125em .5em var(--color-grayscale-6);
 }
-
 
 /* ------------------------ produktside: Kategorier ------------------------ */
 .category-container {    
