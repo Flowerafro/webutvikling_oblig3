@@ -211,8 +211,10 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
 
-    border: red 2px solid;
+form {
+    display: flex;
 }
 
 .search-bar {
@@ -220,16 +222,21 @@ main {
     justify-content: center;
     align-items: center;
 
-    width: 20rem;
+    width: 17rem;
     height: 3rem;
     border: none;
     outline: none;
-    border-radius: 20px 20px 20px 0px;
+    border-radius: 20px 0px 0px 20px;
 
-    text-align: center;
     text-transform: uppercase;
     font-size: 0.8rem;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.sok-btn{
+    width: 3rem;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
 }
 
 /* ------------ ekstra søkeknapper under ------- */
