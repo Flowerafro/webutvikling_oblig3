@@ -328,7 +328,7 @@ form {
     padding: 10px;
 }
 
-#category-header-color {
+.category-header-color {
     color: var(--color-cool-5);
 }
 
@@ -576,30 +576,29 @@ footer {
 
   @media screen and (min-width: 600px) {
     /* ------------------------ body ------------------------ */
-    main {
+    body {
         display: grid;
-        grid-template-columns: 1fr min(50em,60vw) 1fr;
-        gap: 1rem;
+        grid-template-columns: 2;
+        gap: 0.1rem;
         align-items: start;
     } 
     /* ------------------------ header og navbar ------------------------ */
     .nav-dropdown-label {
-        display: none;
+        display: flex;
     }
     
     header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-        padding: 10px;
-    }
-    
-    .logo-design {
-        grid-column: 1 / 2;
+    background: var(--color-green-5);
+    text-align: center;
+    /*position: fixed;
+    z-index: 999;*/
+    width: 100%;
+    padding: 45px;
+    box-shadow: 0 0 2em rgba(0,0,0,.1);
+
     }
     
     nav {
-        all: unset; /*tar av alt vi har gjort tidligere fra nav*/
-        grid-column: 3 / 4;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -616,13 +615,18 @@ footer {
     
     nav a {
         opacity: 1;
+        color: var(--color-grayscale-1);
     }
     
     nav a:hover {
-        color: var(--color-green-4);
+        color: var(--color-grayscale-1);
     }
-    }
+    
     /* ------------------------ Produktside ------------------------ */
+
+    section {
+        grid-column-start: 2;
+    }
 
     .news-container .trendy-container {
         background-size: cover;
@@ -646,8 +650,8 @@ footer {
         background-color: var(--color-green-6);
         text-transform: uppercase;
     }  
-    section {
-        grid-column-start: 2;
-    }
-
+   
+    /* ------------------------ footer ------------------------ */
+   
+}
 
