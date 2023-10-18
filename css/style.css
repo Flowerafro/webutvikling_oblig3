@@ -199,16 +199,17 @@ main {
 /* ---------------------------------------------------------------------------- */
 
 #forside-color {
-    background-color: var(--color-green-5);
+    background-color: var(--color-green-3);
 }
 
 .search-section {
     padding: 10px;
-    margin-top: 100px;
+    margin-top: 110px;
 
     height: 400px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 
     border: red 2px solid;
@@ -219,30 +220,39 @@ main {
     justify-content: center;
     align-items: center;
 
-    width: 15rem;
+    width: 20rem;
     height: 3rem;
-    border-radius: 20px 20px 20px 0px;
     border: none;
     outline: none;
+    border-radius: 20px 20px 20px 0px;
 
     text-align: center;
+    text-transform: uppercase;
     font-size: 0.8rem;
+    letter-spacing: 0.3rem;
+}
 
-    background-color: var(--color-grayscale-1);
+/* ------------ ekstra søkeknapper under ------- */
+
+.category-sok {
+   color: var(--color-green-2);
+   text-transform: uppercase;
+   letter-spacing: 0.5rem;
+   font-weight: 200;
+
+   padding: 1rem;
 }
 
 .categories-btn {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
     text-align: center;
     border: green 2px solid;
 }
 
 .f-btn {
     display: inline-block;
-    padding: 1rem;
+    padding: 0.8rem;
+    
+    border-radius: 15px;
 
     border: none;
 }
